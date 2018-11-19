@@ -3,8 +3,8 @@ package eatnow.my;
 public class customer {
 	private String name;
 	private String phone;
-		
-	public customer(String r_name,String r_phone)
+	
+	public customer(String r_name,String r_phone )
 	{
 		this.name = r_name;
 		this.phone = r_phone;

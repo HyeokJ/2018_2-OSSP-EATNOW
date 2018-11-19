@@ -1,7 +1,8 @@
 package web;
 import eatnow.my.customer;
-import java.io.IOException;
+import eatnow.my.storeUser;
 
+import java.io.IOException;
 import java.sql.Date;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.RequestDispatcher;
@@ -46,6 +47,8 @@ public class androidServlet extends HttpServlet {
 		
 		String _name = "¹ÚÀçÇö";
 		String p_num = "010-2222-2222";
+		
+		
 		
 		session.setAttribute("name",_name);
 		session.setAttribute("phone_num", p_num);

@@ -13,16 +13,17 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Servlet implementation class loginServlet
+ * Servlet implementation class storeUpdateServlet
  */
-@WebServlet("/login")
-public class loginServlet extends HttpServlet {
+@WebServlet("/storeUpdateServlet")
+public class storeUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public loginServlet() {
+    public storeUpdateServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -38,38 +39,23 @@ public class loginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 response.setContentType("text/html;charset=UTF-8");
+		// TODO Auto-generated method stub
+		 response.setContentType("text/html;charset=utf-8");
+		 request.setCharacterEncoding("utf-8");
 		 RequestDispatcher view = null;
-		 
-		 String id = request.getParameter("id");
-		 String password = request.getParameter("password");
-		 storeUser login_person = null;
-		 HttpSession session = request.getSession();
 		 PrintWriter out = response.getWriter();
-
-		 userService accessUser;//userService는 가게 정보 접근 객체
-		 accessUser=new userService();
 		 
-		 login_person=accessUser.getUser(id, password);
-
-		 String redirectUrl = "index.html"; 
-
-		 if(login_person!=null){
-			 redirectUrl = "index_member.jsp";
-			 session.setAttribute("signedUser",id);
-		 }
-		 else{
-			 out.println("<script type=\"text/javascript\">");  
-			 out.println("alert('아이디 혹은 비밀번호가 맞지 않습니다.');");  
-			 out.println("history.back();");
-			 out.println("</script>");
-			 out.close();
-		 }
-
-		 view =request.getRequestDispatcher(redirectUrl);
-		 view.forward(request,response);
-
-	 }
+		
+		 String store_name = request.getParameter("name");
+		 int res_S_for_2 = Integer.parseInt(request.getParameter("s_for_2"));
+		 int res_S_for_4 = Integer.parseInt(request.getParameter("s_for_4"));
+		 int res_S_for_6 = Integer.parseInt(request.getParameter("s_for_6"));
+		 int res_S_for_G = Integer.parseInt(request.getParameter("s_for_G"));
+		
+		 updateStoreData(res_S_for_2,res_S_for_4, res_S_for_6, res_S_for_G);
+		
+		
+		
 	}
 
 }

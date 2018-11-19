@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Thumbnail Gallery - Start Bootstrap Template</title>
+    <title>가게 좌석 현황</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,9 +59,8 @@
 
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-            <div class="table2" style = "height: 200px; width: 200px; border:1px solid black;">
-            <%=session.getAttribute("name")%><br>
-            <%=session.getAttribute("phone_num")%>
+            <div class="table2" style = "text-align:center; vertical-align:middle; color:yellow; background-color: red; height: 200px; width: 200px; border:1px solid black;">
+           	박재현<br>010-xxxx-xxxx
             </div>
           </a>
         </div>
@@ -82,49 +81,63 @@
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-           <div class="table2" style = "height: 200px; width: 200px; border:1px solid black;"></div>
+           <div class="table4" style = "height: 200px; width: 450px; border:1px solid black;"></div>
           </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-            <div class="table2" style = "height: 200px; width: 200px; border:1px solid black;"></div>
+            <div class="table2" style = "height: 200px; width: 200px; border:1px black;"></div>
           </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-            <div class="table2" style = "height: 200px; width: 200px; border:1px solid black;"></div>
+            <div class="table4" style = " text-align:center; vertical-align:middle; color:yellow; background-color: red;height: 200px; width: 450px; border:1px solid black;">
+            김혁진<br>010-xxxx-xxxx</div>
           </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-           <div class="table2" style = "height: 200px; width: 200px; border:1px solid black;"></div>
+           <div class="table2" style = "height: 200px; width: 200px; border:1px black;"></div>
           </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-         <div class="table2" style = "height: 200px; width: 200px; border:1px solid black;"></div>
+         <div class="table10" style = "height: 200px; width: 900px; border:1px solid black;"></div>
           </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-          <div class="table2" style = "height: 200px; width: 200px; border:1px solid black;"></div>
+          <div class="table2" style = "height: 200px; width: 200px; border:1px black;"></div>
           </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-            <div class="table2" style = "height: 200px; width: 200px; border:1px solid black;"></div>
+            <div class="table2" style = "height: 200px; width: 200px; border:1px black;"></div>
           </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#" class="d-block mb-4 h-100">
-			<div class="table2" style = "height: 200px; width: 200px; border:1px solid black;"></div>
+			<div class="table2" style = "height: 200px; width: 200px; border:1px black;"></div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <a href="#" class="d-block mb-4 h-100">
+         <div class="table10" style = "text-align:center; vertical-align:middle; color:yellow; background-color: red;height: 200px; width: 900px; border:1px solid black;">
+         최현<br>010-xxxx-xxxx
+         </div>
           </a>
         </div>
       </div>
 
     </div>
     <!-- /.container -->
-
+	
+	<form action = "androidServlet" method=POST>
+      	<label for="customerName" >예약자 이름</label>
+        <input type="text" name="customerName" class="form-control" placeholder="성명" required="" autofocus="">
+        <label for="customerPhone" >전화 번호</label>
+        <input type="text" name="customerPhone" class="form-control" placeholder="핸드폰 번호" required="">
+	<button type="submit">ADD RESERVATION</button>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
